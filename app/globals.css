@@ -48,6 +48,55 @@ body {
     --sidebar-accent-foreground: 240 5.9% 10%;
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* Sahyadri Digital Canteen Design System Tokens */
+    --bg-page: #F3F5F3;
+    --surface: #FFFFFF;
+    --surface-raised: #EAEFEA;
+    --border-subtle: #D8DFD9;
+    --border-strong: #768579;
+    --border-focus: #0B3B24;
+    --brand: #0B3B24;
+    --brand-hover: #072D1B;
+    --brand-contrast: #FFFFFF;
+    --text-primary: #111827;
+    --text-secondary: #4B5563;
+    --text-muted: #59695E;
+    --nav-inactive: #526357;
+
+    /* Feature Cards Tokens */
+    --feat-green-bg: #E2F4E7;
+    --feat-green-border: #44955B;
+    --feat-green-icon-bg: #C1ECCF;
+    --feat-green-icon: #0A5228;
+
+    --feat-blue-bg: #E1F0FA;
+    --feat-blue-border: #478EBD;
+    --feat-blue-icon-bg: #BDE1F8;
+    --feat-blue-icon: #0D518A;
+
+    --feat-orange-bg: #FEEBDD;
+    --feat-orange-border: #C87346;
+    --feat-orange-icon-bg: #F7D5BD;
+    --feat-orange-icon: #9E360E;
+
+    --feat-purple-bg: #EFE7FA;
+    --feat-purple-border: #8A64CB;
+    --feat-purple-icon-bg: #DCCDF7;
+    --feat-purple-icon: #532997;
+
+    /* Tag Tokens */
+    --tag-green-bg: #E1F5E6;
+    --tag-green-border: #9ADDA9;
+    --tag-green-text: #0A562B;
+
+    --tag-red-bg: #FDEAE8;
+    --tag-red-border: #F7AAA4;
+    --tag-red-text: #9E1C15;
+
+    --tag-orange-bg: #FFF0E5;
+    --tag-orange-border: #FCB893;
+    --tag-orange-text: #9E380B;
   }
   .dark {
     --background: 20 14.3% 4.1%;
@@ -82,6 +131,55 @@ body {
     --sidebar-accent-foreground: 240 4.8% 95.9%;
     --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* Sahyadri Digital Canteen Design System Tokens */
+    --bg-page: #F3F5F3;
+    --surface: #FFFFFF;
+    --surface-raised: #EAEFEA;
+    --border-subtle: #D8DFD9;
+    --border-strong: #768579;
+    --border-focus: #0B3B24;
+    --brand: #0B3B24;
+    --brand-hover: #072D1B;
+    --brand-contrast: #FFFFFF;
+    --text-primary: #111827;
+    --text-secondary: #4B5563;
+    --text-muted: #59695E;
+    --nav-inactive: #526357;
+
+    /* Feature Cards Tokens */
+    --feat-green-bg: #E2F4E7;
+    --feat-green-border: #44955B;
+    --feat-green-icon-bg: #C1ECCF;
+    --feat-green-icon: #0A5228;
+
+    --feat-blue-bg: #E1F0FA;
+    --feat-blue-border: #478EBD;
+    --feat-blue-icon-bg: #BDE1F8;
+    --feat-blue-icon: #0D518A;
+
+    --feat-orange-bg: #FEEBDD;
+    --feat-orange-border: #C87346;
+    --feat-orange-icon-bg: #F7D5BD;
+    --feat-orange-icon: #9E360E;
+
+    --feat-purple-bg: #EFE7FA;
+    --feat-purple-border: #8A64CB;
+    --feat-purple-icon-bg: #DCCDF7;
+    --feat-purple-icon: #532997;
+
+    /* Tag Tokens */
+    --tag-green-bg: #E1F5E6;
+    --tag-green-border: #9ADDA9;
+    --tag-green-text: #0A562B;
+
+    --tag-red-bg: #FDEAE8;
+    --tag-red-border: #F7AAA4;
+    --tag-red-text: #9E1C15;
+
+    --tag-orange-bg: #FFF0E5;
+    --tag-orange-border: #FCB893;
+    --tag-orange-text: #9E380B;
   }
 }
 
@@ -266,4 +364,74 @@ button:focus-visible,
   background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
   background-size: 200px 100%;
   animation: shimmer 1.5s infinite;
+}
+
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+  display: none !important;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none !important;  /* IE and Edge */
+  scrollbar-width: none !important;  /* Firefox */
+}
+
+
+/* =========================================================
+   Apple HIG & Emil Kowalski Design Engineering Foundations
+   ========================================================= */
+
+:root {
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+  --ease-drawer: cubic-bezier(0.32, 0.72, 0, 1);
+  --ease-spring: cubic-bezier(0.175, 0.885, 0.32, 1.2);
+}
+
+/* Native iOS tap feedback & antialiasing */
+html {
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Inter", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Emil Kowalski: Tactile physical press feedback (scale 0.97 with custom curve) */
+.press-scale {
+  transition: transform 150ms var(--ease-out);
+}
+.press-scale:active {
+  transform: scale(0.97);
+}
+
+/* Hover fine-pointer protection (never stick on touch devices) */
+@media (hover: hover) and (pointer: fine) {
+  .desktop-hover-lift:hover {
+    transform: translateY(-2px);
+  }
+}
+
+/* Safe area insets for notched iPhones and gesture home bar */
+.safe-bottom {
+  padding-bottom: max(0.75rem, env(safe-area-inset-bottom));
+}
+.safe-top {
+  padding-top: max(0.5rem, env(safe-area-inset-top));
+}
+
+/* Apple HIG & Emil Kowalski: Respect user's motion sensitivity */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
